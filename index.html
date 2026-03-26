@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" class="dark scroll-smooth">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arnulfo Moreno | Portafolio</title>
-  <meta
-    name="description"
-    content="Portafolio profesional de Arnulfo Moreno: datos, BI, estadística y automatización."
-  />
+  <title>Portafolio | Arnulfo Moreno</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -15,579 +11,439 @@
       darkMode: "class",
       theme: {
         extend: {
-          fontFamily: {
-            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
-          },
           colors: {
-            emeraldPremium: {
-              50: "#ecfdf5",
-              100: "#d1fae5",
-              200: "#a7f3d0",
-              300: "#6ee7b7",
-              400: "#34d399",
-              500: "#10b981",
-              600: "#059669",
-              700: "#047857",
-              800: "#065f46",
-              900: "#064e3b"
-            }
+            bgDark: "#071310",
+            panelDark: "#0b1c18",
+            panelSoft: "#102621",
+            borderSoft: "rgba(92, 138, 122, 0.18)",
+            greenMuted: "#2f6f5c",
+            greenDeep: "#173a31",
+            greenAccent: "#4f8a75",
+            greenText: "#b7d5cb"
           },
           boxShadow: {
-            soft: "0 12px 30px rgba(0,0,0,0.14)",
-            glass: "0 8px 30px rgba(16,185,129,0.10)",
-            glow: "0 0 0 1px rgba(16,185,129,.15), 0 18px 60px rgba(16,185,129,.12)"
+            soft: "0 10px 30px rgba(0,0,0,0.14)",
+            glass: "0 8px 32px rgba(0,0,0,0.12)"
           }
         }
       }
-    };
+    }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
+<body class="bg-[#f3f7f5] text-slate-800 dark:bg-[#071310] dark:text-slate-100 transition-colors duration-300">
 
-<body class="bg-slate-100 text-slate-900 transition-colors duration-300 dark:bg-[#02130f] dark:text-white font-sans">
-  <!-- Fondo -->
-  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-    <div class="absolute left-[-90px] top-[-40px] h-64 w-64 rounded-full bg-emerald-400/10 blur-3xl"></div>
-    <div class="absolute right-[10%] top-[8%] h-80 w-80 rounded-full bg-green-500/10 blur-3xl"></div>
-    <div class="absolute bottom-[-80px] left-[35%] h-72 w-72 rounded-full bg-teal-400/10 blur-3xl"></div>
-  </div>
-
-  <div class="min-h-screen lg:grid lg:grid-cols-[245px_minmax(0,1fr)]">
+  <div class="min-h-screen flex">
     <!-- Sidebar -->
-    <aside class="border-r border-slate-200 bg-white/70 backdrop-blur-xl dark:border-white/5 dark:bg-[#031914]/70">
-      <div class="sticky top-0 flex h-screen flex-col px-4 py-4">
+    <aside class="fixed left-0 top-0 h-screen w-24 lg:w-72 border-r border-black/5 dark:border-white/5 bg-white/70 dark:bg-[#081613]/85 backdrop-blur-xl z-50">
+      <div class="h-full flex flex-col justify-between p-4 lg:p-6">
         <div>
-          <div class="flex h-14 w-14 items-center justify-center rounded-[1.35rem] bg-gradient-to-br from-emerald-500 to-green-700 text-2xl font-bold text-white shadow-glow">
-            A
+          <div class="mb-10">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#315f52] to-[#1b3a31] shadow-soft"></div>
+              <div class="hidden lg:block">
+                <h1 class="font-bold tracking-wide text-lg">Arnulfo Moreno</h1>
+                <p class="text-sm text-slate-500 dark:text-slate-400"
+                   data-es="Portafolio profesional"
+                   data-en="Professional portfolio">
+                  Portafolio profesional
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div class="mt-5">
-            <h1 class="text-[1.05rem] font-extrabold leading-[1.08] sm:text-[1.55rem]">
-              Arnulfo Moreno
-            </h1>
+          <nav class="space-y-2">
+            <a href="#home" class="nav-link flex items-center gap-3 rounded-2xl px-3 py-3 hover:bg-slate-100 dark:hover:bg-white/5 transition">
+              <span>🏠</span>
+              <span class="hidden lg:inline" data-es="Inicio" data-en="Home">Inicio</span>
+            </a>
 
-            <p
-              class="mt-2 max-w-[165px] text-[13px] leading-6 text-slate-500 dark:text-slate-400"
-              data-es="Datos · BI · Estadística · Automatización"
-              data-en="Data · BI · Statistics · Automation"
-            >
-              Datos · BI · Estadística · Automatización
-            </p>
-          </div>
+            <a href="#skills" class="nav-link flex items-center gap-3 rounded-2xl px-3 py-3 hover:bg-slate-100 dark:hover:bg-white/5 transition">
+              <span>⚙️</span>
+              <span class="hidden lg:inline" data-es="Habilidades" data-en="Skills">Habilidades</span>
+            </a>
+
+            <a href="#projects" class="nav-link flex items-center gap-3 rounded-2xl px-3 py-3 hover:bg-slate-100 dark:hover:bg-white/5 transition">
+              <span>📁</span>
+              <span class="hidden lg:inline" data-es="Proyectos" data-en="Projects">Proyectos</span>
+            </a>
+
+            <a href="#about" class="nav-link flex items-center gap-3 rounded-2xl px-3 py-3 hover:bg-slate-100 dark:hover:bg-white/5 transition">
+              <span>👤</span>
+              <span class="hidden lg:inline" data-es="Sobre mí" data-en="About">Sobre mí</span>
+            </a>
+
+            <a href="#education" class="nav-link flex items-center gap-3 rounded-2xl px-3 py-3 hover:bg-slate-100 dark:hover:bg-white/5 transition">
+              <span>🎓</span>
+              <span class="hidden lg:inline" data-es="Formación" data-en="Education">Formación</span>
+            </a>
+
+            <a href="#contact" class="nav-link flex items-center gap-3 rounded-2xl px-3 py-3 hover:bg-slate-100 dark:hover:bg-white/5 transition">
+              <span>✉️</span>
+              <span class="hidden lg:inline" data-es="Contacto" data-en="Contact">Contacto</span>
+            </a>
+          </nav>
         </div>
 
-        <nav class="mt-10 space-y-2 text-[14px]">
-          <a
-            href="#inicio"
-            class="group flex items-center gap-3 rounded-[1rem] bg-emerald-600 px-4 py-3.5 font-semibold text-white shadow-soft transition hover:bg-emerald-500"
-          >
-            <span>⌂</span>
-            <span data-es="Inicio" data-en="Home">Inicio</span>
-          </a>
+        <div class="space-y-3">
+          <div class="flex flex-col lg:flex-row gap-2">
+            <button id="langToggle" class="w-full rounded-2xl px-4 py-3 bg-[#2f6f5c] text-white font-medium hover:opacity-90 transition">
+              ES / EN
+            </button>
 
-          <a
-            href="#perfil"
-            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
-          >
-            <span>○</span>
-            <span data-es="Perfil" data-en="Profile">Perfil</span>
-          </a>
+            <button id="themeToggle" class="w-full rounded-2xl px-4 py-3 border border-black/10 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition">
+              🌙
+            </button>
+          </div>
 
-          <a
-            href="experiencia.html"
-            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
-          >
-            <span>◔</span>
-            <span data-es="Experiencia" data-en="Experience">Experiencia</span>
-          </a>
-
-          <a
-            href="proyectos.html"
-            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
-          >
-            <span>▣</span>
-            <span data-es="Proyectos" data-en="Projects">Proyectos</span>
-          </a>
-
-          <a
-            href="#habilidades"
-            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
-          >
-            <span>△</span>
-            <span data-es="Habilidades" data-en="Skills">Habilidades</span>
-          </a>
-
-          <a
-            href="educacion.html"
-            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
-          >
-            <span>□</span>
-            <span data-es="Educación" data-en="Education">Educación</span>
-          </a>
-
-          <a
-            href="#contacto"
-            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
-          >
-            <span>✉</span>
-            <span data-es="Contacto" data-en="Contact">Contacto</span>
-          </a>
-        </nav>
-
-        <div class="mt-auto text-[11px] text-slate-400 dark:text-slate-500">
-          © 2026 Arnulfo Moreno
+          <div class="hidden lg:block text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p data-es="Diseño minimalista, limpio y profesional."
+               data-en="Minimal, clean and professional design.">
+              Diseño minimalista, limpio y profesional.
+            </p>
+          </div>
         </div>
       </div>
     </aside>
 
     <!-- Main -->
-    <main class="px-4 py-4 sm:px-6 lg:px-7 xl:px-8">
-      <!-- Top controls -->
-      <div class="mb-5 flex flex-col justify-end gap-3 sm:flex-row">
-        <div class="rounded-[1.35rem] border border-slate-200 bg-white/70 px-4 py-3 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
-          <div
-            class="mb-2 text-[10px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300"
-            data-es="Idioma"
-            data-en="Language"
-          >
-            Idioma
-          </div>
+    <main class="ml-24 lg:ml-72 w-full">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8 lg:py-12 space-y-8">
 
-          <div class="flex items-center gap-3">
-            <span class="text-xs text-slate-600 dark:text-slate-300">ES</span>
-            <button
-              id="languageToggle"
-              class="relative h-8 w-16 rounded-full bg-slate-300 transition dark:bg-slate-700"
-              aria-label="Cambiar idioma"
-            >
-              <span
-                id="languageKnob"
-                class="absolute left-1 top-1 h-6 w-6 rounded-full bg-emerald-500 shadow-md transition-transform"
-              ></span>
-            </button>
-            <span class="text-xs text-slate-600 dark:text-slate-300">EN</span>
-          </div>
-        </div>
+        <!-- Hero + Links -->
+        <section id="home" class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+          <!-- Hero -->
+          <div class="xl:col-span-8 rounded-[2rem] border border-black/5 dark:border-white/5 bg-white/70 dark:bg-[#0a1a16] backdrop-blur-xl p-8 lg:p-10 shadow-glass">
+            <div class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-[#1c3b33]/80 text-[#b8d8ce] text-sm mb-6 border border-white/5">
+              <span>●</span>
+              <span data-es="Disponible para proyectos y colaboración" data-en="Available for projects and collaboration">
+                Disponible para proyectos y colaboración
+              </span>
+            </div>
 
-        <div class="rounded-[1.35rem] border border-slate-200 bg-white/70 px-4 py-3 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
-          <div
-            class="mb-2 text-[10px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300"
-            data-es="Tema"
-            data-en="Theme"
-          >
-            Tema
-          </div>
-
-          <div class="flex items-center gap-3">
-            <span class="text-xs">🌙</span>
-            <button
-              id="themeToggle"
-              class="relative h-8 w-16 rounded-full bg-slate-300 transition dark:bg-slate-700"
-              aria-label="Cambiar tema"
-            >
-              <span
-                id="themeKnob"
-                class="absolute left-1 top-1 h-6 w-6 rounded-full bg-emerald-500 shadow-md transition-transform"
-              ></span>
-            </button>
-            <span class="text-xs">☀️</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nuevo layout principal -->
-      <section id="inicio" class="grid gap-5 xl:grid-cols-[1.2fr_0.8fr]">
-        <!-- Hero principal -->
-        <div class="rounded-[2rem] border border-slate-200 bg-white/65 p-6 shadow-glass backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5 sm:p-7">
-          <div class="flex flex-wrap items-center gap-3">
-            <span
-              class="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300"
-              data-es="Portafolio profesional"
-              data-en="Professional portfolio"
-            >
-              Portafolio profesional
-            </span>
-            <span
-              class="rounded-full border border-slate-200 bg-white/60 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400"
-              data-es="Datos · Automatización · BI"
-              data-en="Data · Automation · BI"
-            >
-              Datos · Automatización · BI
-            </span>
-          </div>
-
-          <div class="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
-            <div>
-              <p
-                class="text-[12px] uppercase tracking-[0.32em] text-emerald-600 dark:text-emerald-300"
-                data-es="Analítica aplicada y soluciones eficientes"
-                data-en="Applied analytics and efficient solutions"
-              >
-                Analítica aplicada y soluciones eficientes
+            <div class="space-y-5 max-w-4xl">
+              <p class="uppercase tracking-[0.22em] text-xs text-[#9fc5b8]"
+                 data-es="Portafolio profesional"
+                 data-en="Professional portfolio">
+                Portafolio profesional
               </p>
 
-              <h2 class="mt-4 max-w-3xl text-[2.5rem] font-extrabold leading-[0.95] text-slate-900 dark:text-white sm:text-[3.4rem] xl:text-[4.2rem]">
-                <span data-es="Construyo herramientas que convierten datos en decisiones." data-en="I build tools that turn data into decisions.">
-                  Construyo herramientas que convierten datos en decisiones.
+              <h2 class="text-4xl lg:text-6xl font-black leading-tight">
+                <span class="block">Arnulfo Moreno</span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-[#7ba996] to-[#4f8a75]"
+                      data-es="desarrollando soluciones con claridad y enfoque"
+                      data-en="building solutions with clarity and focus">
+                  desarrollando soluciones con claridad y enfoque
                 </span>
               </h2>
 
-              <p
-                class="mt-5 max-w-2xl text-[1rem] leading-8 text-slate-600 dark:text-slate-300"
-                data-es="Profesional enfocado en análisis de datos, automatización de reportes, integración de información y visualización de indicadores para mejorar procesos y generar valor."
-                data-en="Professional focused on data analysis, report automation, information integration, and indicator visualization to improve processes and generate value."
-              >
-                Profesional enfocado en análisis de datos, automatización de reportes, integración de información y visualización de indicadores para mejorar procesos y generar valor.
+              <p class="text-base lg:text-lg text-slate-600 dark:text-slate-300 max-w-2xl"
+                 data-es="Plantilla profesional con enfoque visual limpio, navegación clara y espacio para mostrar proyectos, habilidades y formación de manera ordenada."
+                 data-en="Professional template with a clean visual approach, clear navigation, and space to showcase projects, skills, and education in an organized way.">
+                Plantilla profesional con enfoque visual limpio, navegación clara y espacio para mostrar proyectos, habilidades y formación de manera ordenada.
               </p>
 
-              <div class="mt-7 flex flex-wrap gap-3">
-                <a
-                  href="proyectos.html"
-                  class="rounded-[1rem] bg-gradient-to-r from-emerald-500 to-green-700 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.02] hover:opacity-95"
-                >
-                  <span data-es="Ver proyectos" data-en="View projects">Ver proyectos</span>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#projects"
+                   class="rounded-2xl px-5 py-3 bg-[#2f6f5c] text-white font-semibold hover:opacity-90 transition"
+                   data-es="Ver proyectos"
+                   data-en="View projects">
+                  Ver proyectos
                 </a>
 
-                <a
-                  href="#perfil"
-                  class="rounded-[1rem] border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-800 transition duration-300 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
-                >
-                  <span data-es="Conocer perfil" data-en="View profile">Conocer perfil</span>
-                </a>
-
-                <a
-                  href="assets/files/CV-Arnulfo-Moreno.pdf"
-                  class="rounded-[1rem] border border-emerald-300 bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-800 transition duration-300 hover:bg-emerald-100 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300 dark:hover:bg-emerald-400/15"
-                >
-                  <span data-es="Descargar CV" data-en="Download CV">Descargar CV</span>
+                <a href="#contact"
+                   class="rounded-2xl px-5 py-3 border border-black/10 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition"
+                   data-es="Contactar"
+                   data-en="Contact">
+                  Contactar
                 </a>
               </div>
             </div>
+          </div>
 
-            <div class="rounded-[1.7rem] border border-slate-200 bg-gradient-to-br from-emerald-100/70 to-white/70 p-4 backdrop-blur-xl dark:border-white/10 dark:from-emerald-400/10 dark:to-white/5">
-              <img
-                src="assets/img/profile.jpg"
-                alt="Foto de perfil de Arnulfo Moreno"
-                class="h-[260px] w-full rounded-[1.3rem] object-cover object-center"
-              />
+          <!-- Links card -->
+          <div class="xl:col-span-4">
+            <article class="rounded-[2rem] border border-black/5 dark:border-white/5 bg-gradient-to-br from-[#23493e] to-[#17342d] text-white p-6 shadow-soft h-full">
+              <p class="text-sm text-[#c9ddd6]" data-es="Enlaces" data-en="Links">Enlaces</p>
+
+              <div class="mt-5 space-y-3">
+                <a href="#"
+                   class="flex items-center justify-between rounded-2xl px-4 py-3 bg-white/5 hover:bg-white/10 transition">
+                  <span>GitHub</span>
+                  <span>↗</span>
+                </a>
+
+                <a href="#"
+                   class="flex items-center justify-between rounded-2xl px-4 py-3 bg-white/5 hover:bg-white/10 transition">
+                  <span>LinkedIn</span>
+                  <span>↗</span>
+                </a>
+
+                <a href="./assets/files/cv.pdf"
+                   class="flex items-center justify-between rounded-2xl px-4 py-3 bg-white/5 hover:bg-white/10 transition">
+                  <span>CV PDF</span>
+                  <span>↗</span>
+                </a>
+
+                <button type="button"
+                        class="copy-email-btn w-full flex items-center justify-between rounded-2xl px-4 py-3 bg-white/5 hover:bg-white/10 transition text-left"
+                        data-email="arnulfo05m@gmail.com">
+                  <span>arnulfo05m@gmail.com</span>
+                  <span class="copy-email-text"
+                        data-es="Copiar"
+                        data-en="Copy">Copiar</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <article class="lg:col-span-12 rounded-[2rem] border border-black/5 dark:border-white/5 bg-white/70 dark:bg-[#0a1a16] backdrop-blur-xl p-8 shadow-glass">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-[#5a8c79] dark:text-[#9fc5b8]"
+                   data-es="Habilidades técnicas"
+                   data-en="Technical skills">
+                  Habilidades técnicas
+                </p>
+                <h3 class="text-2xl font-bold mt-2"
+                    data-es="Tecnologías organizadas por categorías"
+                    data-en="Technologies organized by categories">
+                  Tecnologías organizadas por categorías
+                </h3>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Panel lateral innovador -->
-        <div class="grid gap-5">
-          <div class="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-emerald-600 to-green-800 p-6 text-white shadow-glow transition duration-300 hover:-translate-y-0.5">
-            <p
-              class="text-[11px] uppercase tracking-[0.32em] text-emerald-100/80"
-              data-es="Enfoque"
-              data-en="Focus"
-            >
-              Enfoque
-            </p>
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+              <div class="rounded-2xl p-5 bg-slate-50 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                <h4 class="font-semibold mb-3">Lenguajes</h4>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                  <li>Python</li>
+                  <li>R</li>
+                  <li>SQL</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
 
-            <h3
-              class="mt-3 text-2xl font-bold leading-tight"
-              data-es="Automatización, análisis e inteligencia visual para decisiones."
-              data-en="Automation, analytics, and visual intelligence for decisions."
-            >
-              Automatización, análisis e inteligencia visual para decisiones.
-            </h3>
+              <div class="rounded-2xl p-5 bg-slate-50 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                <h4 class="font-semibold mb-3">Desarrollo</h4>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Tailwind</li>
+                  <li>APIs</li>
+                </ul>
+              </div>
 
-            <p
-              class="mt-4 text-[0.96rem] leading-7 text-emerald-50/90"
-              data-es="Trabajo en soluciones donde los datos no solo se procesan, sino que se convierten en herramientas prácticas y medibles."
-              data-en="I work on solutions where data is not only processed, but transformed into practical and measurable tools."
-            >
-              Trabajo en soluciones donde los datos no solo se procesan, sino que se convierten en herramientas prácticas y medibles.
-            </p>
-          </div>
+              <div class="rounded-2xl p-5 bg-slate-50 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                <h4 class="font-semibold mb-3">Datos</h4>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                  <li>Pandas</li>
+                  <li>Power BI</li>
+                  <li>Oracle</li>
+                  <li>Excel</li>
+                </ul>
+              </div>
 
-          <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
-            <div class="rounded-[1.6rem] border border-slate-200 bg-white/65 p-5 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5">
-              <div class="text-[11px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300">01</div>
-              <h4 class="mt-2 text-lg font-bold">Python</h4>
-              <p
-                class="mt-2 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
-                data-es="Automatización, procesamiento y generación de reportes."
-                data-en="Automation, processing, and report generation."
-              >
-                Automatización, procesamiento y generación de reportes.
-              </p>
+              <div class="rounded-2xl p-5 bg-slate-50 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                <h4 class="font-semibold mb-3">Herramientas</h4>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                  <li>Git / GitHub</li>
+                  <li>VS Code</li>
+                  <li>Streamlit</li>
+                  <li>OpenPyXL</li>
+                </ul>
+              </div>
             </div>
+          </article>
+        </section>
 
-            <div class="rounded-[1.6rem] border border-slate-200 bg-white/65 p-5 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5">
-              <div class="text-[11px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300">02</div>
-              <h4 class="mt-2 text-lg font-bold">SQL & BI</h4>
-              <p
-                class="mt-2 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
-                data-es="Integración, análisis y visualización de información."
-                data-en="Integration, analysis, and information visualization."
-              >
-                Integración, análisis y visualización de información.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Perfil + métricas -->
-      <section id="perfil" class="mt-5 grid gap-5 xl:grid-cols-[0.95fr_1.05fr]">
-        <div class="rounded-[1.9rem] border border-slate-200 bg-white/65 p-6 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
-          <p
-            class="text-[11px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300"
-            data-es="Perfil"
-            data-en="Profile"
-          >
-            Perfil
-          </p>
-
-          <h3
-            class="mt-3 text-3xl font-bold"
-            data-es="Un perfil técnico orientado a impacto real."
-            data-en="A technical profile focused on real impact."
-          >
-            Un perfil técnico orientado a impacto real.
-          </h3>
-
-          <p
-            class="mt-5 text-[1rem] leading-8 text-slate-600 dark:text-slate-300"
-            data-es="Experiencia en automatización de reportes, análisis estadístico, consultas SQL, procesamiento de datos y visualización de indicadores. Mi enfoque es transformar procesos manuales en flujos más eficientes, claros y sostenibles."
-            data-en="Experience in report automation, statistical analysis, SQL querying, data processing, and indicator visualization. My focus is transforming manual processes into more efficient, clear, and sustainable workflows."
-          >
-            Experiencia en automatización de reportes, análisis estadístico, consultas SQL, procesamiento de datos y visualización de indicadores. Mi enfoque es transformar procesos manuales en flujos más eficientes, claros y sostenibles.
-          </p>
-        </div>
-
-        <div class="grid gap-4 sm:grid-cols-3">
-          <div class="rounded-[1.6rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 shadow-soft transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
-            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-300">SQL</div>
-            <p
-              class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400"
-              data-es="Consultas, joins, vistas y análisis estructurado."
-              data-en="Queries, joins, views, and structured analysis."
-            >
-              Consultas, joins, vistas y análisis estructurado.
-            </p>
-          </div>
-
-          <div class="rounded-[1.6rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 shadow-soft transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
-            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-300">BI</div>
-            <p
-              class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400"
-              data-es="Dashboards, KPIs y reportes ejecutivos."
-              data-en="Dashboards, KPIs, and executive reporting."
-            >
-              Dashboards, KPIs y reportes ejecutivos.
-            </p>
-          </div>
-
-          <div class="rounded-[1.6rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 shadow-soft transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
-            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-300">ML</div>
-            <p
-              class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400"
-              data-es="Modelos y análisis para extraer patrones."
-              data-en="Models and analysis to extract patterns."
-            >
-              Modelos y análisis para extraer patrones.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Habilidades rediseñadas -->
-      <section id="habilidades" class="mt-5">
-        <div class="rounded-[1.9rem] border border-slate-200 bg-white/65 p-6 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
-          <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <!-- Projects -->
+        <section id="projects" class="rounded-[2rem] border border-black/5 dark:border-white/5 bg-white/70 dark:bg-[#0a1a16] backdrop-blur-xl p-8 shadow-glass">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
             <div>
-              <p
-                class="text-[11px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300"
-                data-es="Habilidades"
-                data-en="Skills"
-              >
-                Habilidades
+              <p class="text-sm uppercase tracking-[0.2em] text-[#5a8c79] dark:text-[#9fc5b8]"
+                 data-es="Proyectos principales"
+                 data-en="Main projects">
+                Proyectos principales
               </p>
-              <h3
-                class="mt-2 text-3xl font-bold"
-                data-es="Capacidades técnicas organizadas por áreas."
-                data-en="Technical capabilities organized by areas."
-              >
-                Capacidades técnicas organizadas por áreas.
+              <h3 class="text-2xl lg:text-3xl font-bold mt-2"
+                  data-es="Selección breve de trabajos y desarrollos"
+                  data-en="Short selection of works and developments">
+                Selección breve de trabajos y desarrollos
               </h3>
             </div>
 
-            <p
-              class="max-w-xl text-sm leading-6 text-slate-500 dark:text-slate-400"
-              data-es="Una combinación de automatización, analítica, visualización y pensamiento cuantitativo."
-              data-en="A combination of automation, analytics, visualization, and quantitative thinking."
-            >
-              Una combinación de automatización, analítica, visualización y pensamiento cuantitativo.
+            <a href="./proyectos.html"
+               class="rounded-2xl px-5 py-3 border border-black/10 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition"
+               data-es="Ver todos"
+               data-en="View all">
+              Ver todos
+            </a>
+          </div>
+
+          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <article class="project-card">
+              <div class="project-thumb">01</div>
+              <div class="p-5">
+                <h4 class="text-xl font-bold mb-2">Proyecto 1</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300"
+                   data-es="Espacio para colocar la descripción breve del proyecto, tecnologías y objetivo."
+                   data-en="Space to place a short project description, technologies, and goal.">
+                  Espacio para colocar la descripción breve del proyecto, tecnologías y objetivo.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-thumb">02</div>
+              <div class="p-5">
+                <h4 class="text-xl font-bold mb-2">Proyecto 2</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300"
+                   data-es="Espacio para colocar la descripción breve del proyecto, tecnologías y objetivo."
+                   data-en="Space to place a short project description, technologies, and goal.">
+                  Espacio para colocar la descripción breve del proyecto, tecnologías y objetivo.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-thumb">03</div>
+              <div class="p-5">
+                <h4 class="text-xl font-bold mb-2">Proyecto 3</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300"
+                   data-es="Espacio para colocar la descripción breve del proyecto, tecnologías y objetivo."
+                   data-en="Space to place a short project description, technologies, and goal.">
+                  Espacio para colocar la descripción breve del proyecto, tecnologías y objetivo.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <article class="lg:col-span-8 rounded-[2rem] border border-black/5 dark:border-white/5 bg-white/70 dark:bg-[#0a1a16] backdrop-blur-xl p-8 shadow-glass">
+            <p class="text-sm uppercase tracking-[0.2em] text-[#5a8c79] dark:text-[#9fc5b8] mb-4"
+               data-es="Sobre mí"
+               data-en="About me">
+              Sobre mí
             </p>
-          </div>
 
-          <div class="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <div class="rounded-[1.4rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-glass dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
-              <h4 class="text-lg font-bold">Python</h4>
-              <p
-                class="mt-3 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
-                data-es="Automatización de tareas, generación de archivos, procesamiento y análisis."
-                data-en="Task automation, file generation, processing, and analysis."
-              >
-                Automatización de tareas, generación de archivos, procesamiento y análisis.
-              </p>
+            <h3 class="text-2xl lg:text-3xl font-bold mb-4"
+                data-es="Perfil académico y profesional en construcción"
+                data-en="Academic and professional profile in progress">
+              Perfil académico y profesional en construcción
+            </h3>
+
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed"
+               data-es="Este espacio está pensado para mostrar de forma clara proyectos, habilidades, herramientas y formación. El enfoque es presentar información relevante, ordenada y fácil de recorrer, sin exceso de texto."
+               data-en="This space is meant to clearly showcase projects, skills, tools, and education. The focus is to present relevant, organized, and easy-to-read information without too much text.">
+              Este espacio está pensado para mostrar de forma clara proyectos, habilidades, herramientas y formación. El enfoque es presentar información relevante, ordenada y fácil de recorrer, sin exceso de texto.
+            </p>
+          </article>
+
+          <article class="lg:col-span-4 rounded-[2rem] border border-black/5 dark:border-white/5 bg-white/70 dark:bg-[#0a1a16] backdrop-blur-xl p-8 shadow-glass">
+            <p class="text-sm uppercase tracking-[0.2em] text-[#5a8c79] dark:text-[#9fc5b8] mb-4"
+               data-es="Habilidades blandas"
+               data-en="Soft skills">
+              Habilidades blandas
+            </p>
+
+            <div class="flex flex-wrap gap-3">
+              <span class="chip" data-es="Comunicación" data-en="Communication">Comunicación</span>
+              <span class="chip" data-es="Organización" data-en="Organization">Organización</span>
+              <span class="chip" data-es="Análisis" data-en="Analysis">Análisis</span>
+              <span class="chip" data-es="Aprendizaje continuo" data-en="Continuous learning">Aprendizaje continuo</span>
+              <span class="chip" data-es="Resolución de problemas" data-en="Problem solving">Resolución de problemas</span>
             </div>
+          </article>
+        </section>
 
-            <div class="rounded-[1.4rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-glass dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
-              <h4 class="text-lg font-bold">SQL</h4>
-              <p
-                class="mt-3 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
-                data-es="Consultas avanzadas, agregaciones, joins y estructuración de datos."
-                data-en="Advanced queries, aggregations, joins, and data structuring."
-              >
-                Consultas avanzadas, agregaciones, joins y estructuración de datos.
-              </p>
+        <!-- Education -->
+        <section id="education" class="grid grid-cols-1 gap-6">
+          <article class="rounded-[2rem] border border-black/5 dark:border-white/5 bg-white/70 dark:bg-[#0a1a16] backdrop-blur-xl p-8 shadow-glass">
+            <p class="text-sm uppercase tracking-[0.2em] text-[#5a8c79] dark:text-[#9fc5b8] mb-4"
+               data-es="Formación"
+               data-en="Education">
+              Formación
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="rounded-2xl p-5 bg-slate-50 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                <h4 class="font-bold mb-2"
+                    data-es="Formación académica"
+                    data-en="Academic background">
+                  Formación académica
+                </h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300"
+                   data-es="Espacio para agregar carrera, universidad, maestría, cursos o certificaciones."
+                   data-en="Space to add degree, university, master's program, courses, or certifications.">
+                  Espacio para agregar carrera, universidad, maestría, cursos o certificaciones.
+                </p>
+              </div>
+
+              <div class="rounded-2xl p-5 bg-slate-50 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                <h4 class="font-bold mb-2"
+                    data-es="Aprendizaje continuo"
+                    data-en="Continuous learning">
+                  Aprendizaje continuo
+                </h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300"
+                   data-es="Espacio para describir áreas de estudio, práctica autodidacta o tecnologías en desarrollo."
+                   data-en="Space to describe study areas, self-learning practice, or technologies in progress.">
+                  Espacio para describir áreas de estudio, práctica autodidacta o tecnologías en desarrollo.
+                </p>
+              </div>
             </div>
+          </article>
+        </section>
 
-            <div class="rounded-[1.4rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-glass dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
-              <h4 class="text-lg font-bold">Power BI</h4>
-              <p
-                class="mt-3 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
-                data-es="Dashboards estratégicos, indicadores y comunicación visual de resultados."
-                data-en="Strategic dashboards, indicators, and visual communication of results."
-              >
-                Dashboards estratégicos, indicadores y comunicación visual de resultados.
-              </p>
-            </div>
-
-            <div class="rounded-[1.4rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-glass dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
-              <h4 class="text-lg font-bold">Estadística</h4>
-              <p
-                class="mt-3 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
-                data-es="Análisis descriptivo, inferencia y apoyo cuantitativo a decisiones."
-                data-en="Descriptive analysis, inference, and quantitative support for decisions."
-              >
-                Análisis descriptivo, inferencia y apoyo cuantitativo a decisiones.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contacto -->
-      <section id="contacto" class="mt-5">
-        <div class="rounded-[1.9rem] border border-slate-200 bg-gradient-to-r from-emerald-50 to-green-100 p-6 shadow-soft dark:border-white/10 dark:from-[#07251e] dark:to-[#0b3126]">
-          <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+        <!-- Contact -->
+        <section id="contact" class="rounded-[2rem] border border-black/5 dark:border-white/5 bg-gradient-to-r from-[#22473d] to-[#17342d] text-white p-8 lg:p-10 shadow-soft">
+          <div class="grid lg:grid-cols-2 gap-6 items-center">
             <div>
-              <p
-                class="text-[11px] uppercase tracking-[0.30em] text-emerald-700 dark:text-emerald-300"
-                data-es="Contacto"
-                data-en="Contact"
-              >
+              <p class="uppercase tracking-[0.2em] text-sm text-[#c1d8d0]"
+                 data-es="Contacto"
+                 data-en="Contact">
                 Contacto
               </p>
 
-              <h3
-                class="mt-2 text-3xl font-bold"
-                data-es="Conversemos sobre datos, automatización y proyectos."
-                data-en="Let’s talk about data, automation, and projects."
-              >
-                Conversemos sobre datos, automatización y proyectos.
+              <h3 class="text-3xl lg:text-4xl font-black mt-3"
+                  data-es="Puedes escribirme directamente"
+                  data-en="You can contact me directly">
+                Puedes escribirme directamente
               </h3>
-
-              <p
-                class="mt-4 max-w-3xl text-[0.98rem] leading-7 text-slate-600 dark:text-slate-300"
-                data-es="Puedes ver mis proyectos, mi perfil profesional o comunicarte conmigo por estos medios."
-                data-en="You can explore my projects, my professional profile, or contact me through these channels."
-              >
-                Puedes ver mis proyectos, mi perfil profesional o comunicarte conmigo por estos medios.
-              </p>
             </div>
 
-            <div class="flex flex-wrap gap-3">
-              <a
-                href="https://github.com/tuusuario"
-                target="_blank"
-                class="rounded-[1rem] border border-emerald-200 bg-white/80 px-4 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
-              >
-                GitHub
-              </a>
+            <div class="flex flex-col gap-3 lg:items-end">
+              <button type="button"
+                      class="copy-email-btn contact-copy rounded-2xl px-5 py-4 bg-white text-[#18352d] font-semibold hover:opacity-90 transition text-left"
+                      data-email="arnulfo05m@gmail.com">
+                <span class="block text-sm opacity-70">Email</span>
+                <span class="copy-email-main">arnulfo05m@gmail.com</span>
+                <span class="copy-email-text text-sm opacity-70"
+                      data-es="Haz clic para copiar"
+                      data-en="Click to copy">
+                  Haz clic para copiar
+                </span>
+              </button>
 
-              <a
-                href="https://linkedin.com/in/tuusuario"
-                target="_blank"
-                class="rounded-[1rem] border border-emerald-200 bg-white/80 px-4 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="mailto:tucorreo@correo.com"
-                class="rounded-[1rem] border border-emerald-200 bg-white/80 px-4 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
-              >
-                Email
-              </a>
+              <div class="flex flex-wrap gap-3 lg:justify-end">
+                <a href="#" class="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10 transition">GitHub</a>
+                <a href="#" class="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/10 transition">LinkedIn</a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+      </div>
     </main>
   </div>
 
-  <script>
-    const html = document.documentElement;
-    const themeToggle = document.getElementById("themeToggle");
-    const themeKnob = document.getElementById("themeKnob");
-    const languageToggle = document.getElementById("languageToggle");
-    const languageKnob = document.getElementById("languageKnob");
-
-    function applyTheme(theme) {
-      if (theme === "dark") {
-        html.classList.add("dark");
-        themeKnob.style.transform = "translateX(32px)";
-      } else {
-        html.classList.remove("dark");
-        themeKnob.style.transform = "translateX(0)";
-      }
-      localStorage.setItem("theme", theme);
-    }
-
-    function applyLanguage(lang) {
-      document.documentElement.lang = lang;
-
-      document.querySelectorAll("[data-es]").forEach((el) => {
-        el.textContent = lang === "en" ? el.dataset.en : el.dataset.es;
-      });
-
-      if (lang === "en") {
-        languageKnob.style.transform = "translateX(32px)";
-      } else {
-        languageKnob.style.transform = "translateX(0)";
-      }
-
-      localStorage.setItem("language", lang);
-    }
-
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    const savedLanguage = localStorage.getItem("language") || "es";
-
-    applyTheme(savedTheme);
-    applyLanguage(savedLanguage);
-
-    themeToggle.addEventListener("click", () => {
-      const newTheme = html.classList.contains("dark") ? "light" : "dark";
-      applyTheme(newTheme);
-    });
-
-    languageToggle.addEventListener("click", () => {
-      const currentLang = document.documentElement.lang || "es";
-      const newLang = currentLang === "es" ? "en" : "es";
-      applyLanguage(newLang);
-    });
-  </script>
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>

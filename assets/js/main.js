@@ -1,50 +1,70 @@
 const html = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
-const themeKnob = document.getElementById("themeKnob");
+const langToggle = document.getElementById("langToggle");
 
-const languageToggle = document.getElementById("languageToggle");
-const languageKnob = document.getElementById("languageKnob");
-
-function applyTheme(theme) {
-  if (theme === "dark") {
-    html.classList.add("dark");
-    themeKnob.style.transform = "translateX(32px)";
-  } else {
-    html.classList.remove("dark");
-    themeKnob.style.transform = "translateX(0)";
-  }
-  localStorage.setItem("theme", theme);
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  html.classList.add("dark");
 }
+
+function updateThemeIcon() {
+  if (!themeToggle) return;
+  const isDark = html.classList.contains("dark");
+  themeToggle.textContent = isDark ? "☀️" : "🌙";
+}
+
+if (themeToggle) {
+  updateThemeIcon();
+
+  themeToggle.addEventListener("click", () => {
+    html.classList.toggle("dark");
+    const isDark = html.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateThemeIcon();
+  });
+}
+
+let currentLang = localStorage.getItem("lang") || "es";
 
 function applyLanguage(lang) {
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-es]").forEach((el) => {
-    el.textContent = lang === "en" ? el.dataset.en : el.dataset.es;
+  document.querySelectorAll("[data-es][data-en]").forEach((el) => {
+    el.textContent = el.getAttribute(`data-${lang}`);
   });
-
-  if (lang === "en") {
-    languageKnob.style.transform = "translateX(32px)";
-  } else {
-    languageKnob.style.transform = "translateX(0)";
-  }
-
-  localStorage.setItem("language", lang);
 }
 
-const savedTheme = localStorage.getItem("theme") || "dark";
-const savedLanguage = localStorage.getItem("language") || "es";
+applyLanguage(currentLang);
 
-applyTheme(savedTheme);
-applyLanguage(savedLanguage);
+if (langToggle) {
+  langToggle.addEventListener("click", () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    localStorage.setItem("lang", currentLang);
+    applyLanguage(currentLang);
+  });
+}
 
-themeToggle.addEventListener("click", () => {
-  const newTheme = html.classList.contains("dark") ? "light" : "dark";
-  applyTheme(newTheme);
-});
+// Copiar correo
+const copyButtons = document.querySelectorAll(".copy-email-btn");
 
-languageToggle.addEventListener("click", () => {
-  const currentLang = document.documentElement.lang || "es";
-  const newLang = currentLang === "es" ? "en" : "es";
-  applyLanguage(newLang);
+copyButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    const email = button.dataset.email;
+    const textElement = button.querySelector(".copy-email-text");
+
+    try {
+      await navigator.clipboard.writeText(email);
+
+      if (textElement) {
+        const originalEs = textElement.getAttribute("data-es") || "Copiar";
+        const originalEn = textElement.getAttribute("data-en") || "Copy";
+
+        textElement.textContent = currentLang === "es" ? "Copiado" : "Copied";
+
+        setTimeout(() => {
+          textElement.textContent = currentLang === "es" ? originalEs : originalEn;
+        }, 1500);
+      }
+    } catch (error) {
+      console.error("No se pudo copiar el correo:", error);
+    }
+  });
 });
