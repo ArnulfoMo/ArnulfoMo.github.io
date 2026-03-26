@@ -1,177 +1,593 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio | Analítica y Automatización</title>
+  <title>Arnulfo Moreno | Portafolio</title>
+  <meta
+    name="description"
+    content="Portafolio profesional de Arnulfo Moreno: datos, BI, estadística y automatización."
+  />
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+          },
+          colors: {
+            emeraldPremium: {
+              50: "#ecfdf5",
+              100: "#d1fae5",
+              200: "#a7f3d0",
+              300: "#6ee7b7",
+              400: "#34d399",
+              500: "#10b981",
+              600: "#059669",
+              700: "#047857",
+              800: "#065f46",
+              900: "#064e3b"
+            }
+          },
+          boxShadow: {
+            soft: "0 12px 30px rgba(0,0,0,0.14)",
+            glass: "0 8px 30px rgba(16,185,129,0.10)",
+            glow: "0 0 0 1px rgba(16,185,129,.15), 0 18px 60px rgba(16,185,129,.12)"
+          }
+        }
+      }
+    };
+  </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
-<body class="bg-slate-950 text-white">
-
-<!-- NAVBAR -->
-<header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur border-b border-white/10">
-  <nav class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-    <span class="font-bold text-lg">Portafolio</span>
-
-    <div class="hidden md:flex gap-6 text-slate-300">
-      <a href="#sobre" class="hover:text-cyan-400">Sobre mí</a>
-      <a href="#skills" class="hover:text-cyan-400">Habilidades</a>
-      <a href="proyectos.html" class="hover:text-cyan-400">Ver proyectos</a>
-      <a href="#contacto" class="hover:text-cyan-400">Contacto</a>
-    </div>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="min-h-screen flex items-center max-w-6xl mx-auto px-6">
-  <div class="grid md:grid-cols-2 gap-10 items-center">
-
-    <div>
-      <h1 class="text-5xl font-extrabold leading-tight">
-        Hola, soy
-        <span class="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
-          Arnulfo Moreno
-        </span>
-      </h1>
-
-      <p class="mt-6 text-lg text-slate-300 leading-relaxed">
-        Profesional en análisis de datos y automatización de procesos.
-        Trabajo con Python, SQL y herramientas de visualización para
-        transformar datos en información útil para la toma de decisiones.
-      </p>
-
-      <div class="mt-8 flex gap-4">
-        <a href="#proyectos"
-           class="px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-900 font-semibold rounded-xl">
-          Ver proyectos
-        </a>
-
-        <a href="assets/files/CV-Arnulfo-Moreno.pdf"
-           class="px-6 py-3 border border-white/20 rounded-xl">
-          Descargar CV
-        </a>
-      </div>
-
-      <div class="mt-8 flex flex-wrap gap-3 text-sm">
-        <span class="px-3 py-1 bg-white/5 rounded-full">Python</span>
-        <span class="px-3 py-1 bg-white/5 rounded-full">SQL</span>
-        <span class="px-3 py-1 bg-white/5 rounded-full">Power BI</span>
-        <span class="px-3 py-1 bg-white/5 rounded-full">Excel</span>
-        <span class="px-3 py-1 bg-white/5 rounded-full">Machine Learning</span>
-      </div>
-    </div>
-
-    <div class="flex justify-center">
-      <img src="assets/img/profile.jpg"
-           class="rounded-2xl w-80 h-[420px] object-cover border border-white/10">
-    </div>
-
+<body class="bg-slate-100 text-slate-900 transition-colors duration-300 dark:bg-[#02130f] dark:text-white font-sans">
+  <!-- Fondo -->
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute left-[-90px] top-[-40px] h-64 w-64 rounded-full bg-emerald-400/10 blur-3xl"></div>
+    <div class="absolute right-[10%] top-[8%] h-80 w-80 rounded-full bg-green-500/10 blur-3xl"></div>
+    <div class="absolute bottom-[-80px] left-[35%] h-72 w-72 rounded-full bg-teal-400/10 blur-3xl"></div>
   </div>
-</section>
 
-<!-- SOBRE MI -->
-<section id="sobre" class="max-w-5xl mx-auto px-6 py-20">
-  <h2 class="text-3xl font-bold mb-6">Sobre mí</h2>
+  <div class="min-h-screen lg:grid lg:grid-cols-[245px_minmax(0,1fr)]">
+    <!-- Sidebar -->
+    <aside class="border-r border-slate-200 bg-white/70 backdrop-blur-xl dark:border-white/5 dark:bg-[#031914]/70">
+      <div class="sticky top-0 flex h-screen flex-col px-4 py-4">
+        <div>
+          <div class="flex h-14 w-14 items-center justify-center rounded-[1.35rem] bg-gradient-to-br from-emerald-500 to-green-700 text-2xl font-bold text-white shadow-glow">
+            A
+          </div>
 
-  <p class="text-slate-300 leading-relaxed text-lg">
-    Tengo experiencia en análisis de datos, desarrollo de consultas SQL,
-    automatización de reportes con Python y generación de dashboards
-    para la toma de decisiones. Me enfoco en optimizar procesos,
-    reducir tiempos operativos y mejorar la calidad de la información.
-  </p>
-</section>
+          <div class="mt-5">
+            <h1 class="text-[1.05rem] font-extrabold leading-[1.08] sm:text-[1.55rem]">
+              Arnulfo Moreno
+            </h1>
 
-<!-- SKILLS -->
-<section id="skills" class="max-w-6xl mx-auto px-6 py-20">
-  <h2 class="text-3xl font-bold mb-10">Habilidades</h2>
+            <p
+              class="mt-2 max-w-[165px] text-[13px] leading-6 text-slate-500 dark:text-slate-400"
+              data-es="Datos · BI · Estadística · Automatización"
+              data-en="Data · BI · Statistics · Automation"
+            >
+              Datos · BI · Estadística · Automatización
+            </p>
+          </div>
+        </div>
 
-  <div class="grid md:grid-cols-4 gap-6">
+        <nav class="mt-10 space-y-2 text-[14px]">
+          <a
+            href="#inicio"
+            class="group flex items-center gap-3 rounded-[1rem] bg-emerald-600 px-4 py-3.5 font-semibold text-white shadow-soft transition hover:bg-emerald-500"
+          >
+            <span>⌂</span>
+            <span data-es="Inicio" data-en="Home">Inicio</span>
+          </a>
 
-    <div class="bg-slate-900 p-6 rounded-xl border border-white/10">
-      <h3 class="font-semibold text-lg">Análisis de datos</h3>
-      <p class="text-slate-400 mt-2">Exploración, métricas y análisis aplicado.</p>
-    </div>
+          <a
+            href="#perfil"
+            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
+          >
+            <span>○</span>
+            <span data-es="Perfil" data-en="Profile">Perfil</span>
+          </a>
 
-    <div class="bg-slate-900 p-6 rounded-xl border border-white/10">
-      <h3 class="font-semibold text-lg">Python</h3>
-      <p class="text-slate-400 mt-2">Automatización y procesamiento de datos.</p>
-    </div>
+          <a
+            href="experiencia.html"
+            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
+          >
+            <span>◔</span>
+            <span data-es="Experiencia" data-en="Experience">Experiencia</span>
+          </a>
 
-    <div class="bg-slate-900 p-6 rounded-xl border border-white/10">
-      <h3 class="font-semibold text-lg">SQL</h3>
-      <p class="text-slate-400 mt-2">Consultas, joins y análisis en bases de datos.</p>
-    </div>
+          <a
+            href="proyectos.html"
+            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
+          >
+            <span>▣</span>
+            <span data-es="Proyectos" data-en="Projects">Proyectos</span>
+          </a>
 
-    <div class="bg-slate-900 p-6 rounded-xl border border-white/10">
-      <h3 class="font-semibold text-lg">Visualización</h3>
-      <p class="text-slate-400 mt-2">Dashboards y reportes ejecutivos.</p>
-    </div>
+          <a
+            href="#habilidades"
+            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
+          >
+            <span>△</span>
+            <span data-es="Habilidades" data-en="Skills">Habilidades</span>
+          </a>
 
-  </div>
-</section>
+          <a
+            href="educacion.html"
+            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
+          >
+            <span>□</span>
+            <span data-es="Educación" data-en="Education">Educación</span>
+          </a>
 
-<!-- PROYECTOS -->
-<section id="proyectos" class="max-w-6xl mx-auto px-6 py-20">
-  <h2 class="text-3xl font-bold mb-10">Proyectos</h2>
+          <a
+            href="#contacto"
+            class="group flex items-center gap-3 rounded-[1rem] px-4 py-3.5 text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
+          >
+            <span>✉</span>
+            <span data-es="Contacto" data-en="Contact">Contacto</span>
+          </a>
+        </nav>
 
-  <div class="grid md:grid-cols-3 gap-8">
-
-    <div class="bg-slate-900 rounded-xl overflow-hidden border border-white/10">
-      <img src="assets/img/project-1.png" class="h-40 w-full object-cover">
-      <div class="p-5">
-        <h3 class="font-bold text-lg">Automatización de reportes</h3>
-        <p class="text-slate-400 mt-2">
-          Generación automática de reportes en Excel con Python.
-        </p>
+        <div class="mt-auto text-[11px] text-slate-400 dark:text-slate-500">
+          © 2026 Arnulfo Moreno
+        </div>
       </div>
-    </div>
+    </aside>
 
-    <div class="bg-slate-900 rounded-xl overflow-hidden border border-white/10">
-      <img src="assets/img/project-2.png" class="h-40 w-full object-cover">
-      <div class="p-5">
-        <h3 class="font-bold text-lg">Dashboard analítico</h3>
-        <p class="text-slate-400 mt-2">
-          Visualización de indicadores con Power BI.
-        </p>
+    <!-- Main -->
+    <main class="px-4 py-4 sm:px-6 lg:px-7 xl:px-8">
+      <!-- Top controls -->
+      <div class="mb-5 flex flex-col justify-end gap-3 sm:flex-row">
+        <div class="rounded-[1.35rem] border border-slate-200 bg-white/70 px-4 py-3 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+          <div
+            class="mb-2 text-[10px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300"
+            data-es="Idioma"
+            data-en="Language"
+          >
+            Idioma
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-slate-600 dark:text-slate-300">ES</span>
+            <button
+              id="languageToggle"
+              class="relative h-8 w-16 rounded-full bg-slate-300 transition dark:bg-slate-700"
+              aria-label="Cambiar idioma"
+            >
+              <span
+                id="languageKnob"
+                class="absolute left-1 top-1 h-6 w-6 rounded-full bg-emerald-500 shadow-md transition-transform"
+              ></span>
+            </button>
+            <span class="text-xs text-slate-600 dark:text-slate-300">EN</span>
+          </div>
+        </div>
+
+        <div class="rounded-[1.35rem] border border-slate-200 bg-white/70 px-4 py-3 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+          <div
+            class="mb-2 text-[10px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300"
+            data-es="Tema"
+            data-en="Theme"
+          >
+            Tema
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="text-xs">🌙</span>
+            <button
+              id="themeToggle"
+              class="relative h-8 w-16 rounded-full bg-slate-300 transition dark:bg-slate-700"
+              aria-label="Cambiar tema"
+            >
+              <span
+                id="themeKnob"
+                class="absolute left-1 top-1 h-6 w-6 rounded-full bg-emerald-500 shadow-md transition-transform"
+              ></span>
+            </button>
+            <span class="text-xs">☀️</span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="bg-slate-900 rounded-xl overflow-hidden border border-white/10">
-      <img src="assets/img/project-3.png" class="h-40 w-full object-cover">
-      <div class="p-5">
-        <h3 class="font-bold text-lg">Modelo de datos</h3>
-        <p class="text-slate-400 mt-2">
-          Procesamiento y análisis de datos para decisiones.
-        </p>
-      </div>
-    </div>
+      <!-- Nuevo layout principal -->
+      <section id="inicio" class="grid gap-5 xl:grid-cols-[1.2fr_0.8fr]">
+        <!-- Hero principal -->
+        <div class="rounded-[2rem] border border-slate-200 bg-white/65 p-6 shadow-glass backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5 sm:p-7">
+          <div class="flex flex-wrap items-center gap-3">
+            <span
+              class="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300"
+              data-es="Portafolio profesional"
+              data-en="Professional portfolio"
+            >
+              Portafolio profesional
+            </span>
+            <span
+              class="rounded-full border border-slate-200 bg-white/60 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400"
+              data-es="Datos · Automatización · BI"
+              data-en="Data · Automation · BI"
+            >
+              Datos · Automatización · BI
+            </span>
+          </div>
 
+          <div class="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
+            <div>
+              <p
+                class="text-[12px] uppercase tracking-[0.32em] text-emerald-600 dark:text-emerald-300"
+                data-es="Analítica aplicada y soluciones eficientes"
+                data-en="Applied analytics and efficient solutions"
+              >
+                Analítica aplicada y soluciones eficientes
+              </p>
+
+              <h2 class="mt-4 max-w-3xl text-[2.5rem] font-extrabold leading-[0.95] text-slate-900 dark:text-white sm:text-[3.4rem] xl:text-[4.2rem]">
+                <span data-es="Construyo herramientas que convierten datos en decisiones." data-en="I build tools that turn data into decisions.">
+                  Construyo herramientas que convierten datos en decisiones.
+                </span>
+              </h2>
+
+              <p
+                class="mt-5 max-w-2xl text-[1rem] leading-8 text-slate-600 dark:text-slate-300"
+                data-es="Profesional enfocado en análisis de datos, automatización de reportes, integración de información y visualización de indicadores para mejorar procesos y generar valor."
+                data-en="Professional focused on data analysis, report automation, information integration, and indicator visualization to improve processes and generate value."
+              >
+                Profesional enfocado en análisis de datos, automatización de reportes, integración de información y visualización de indicadores para mejorar procesos y generar valor.
+              </p>
+
+              <div class="mt-7 flex flex-wrap gap-3">
+                <a
+                  href="proyectos.html"
+                  class="rounded-[1rem] bg-gradient-to-r from-emerald-500 to-green-700 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.02] hover:opacity-95"
+                >
+                  <span data-es="Ver proyectos" data-en="View projects">Ver proyectos</span>
+                </a>
+
+                <a
+                  href="#perfil"
+                  class="rounded-[1rem] border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-800 transition duration-300 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+                >
+                  <span data-es="Conocer perfil" data-en="View profile">Conocer perfil</span>
+                </a>
+
+                <a
+                  href="assets/files/CV-Arnulfo-Moreno.pdf"
+                  class="rounded-[1rem] border border-emerald-300 bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-800 transition duration-300 hover:bg-emerald-100 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300 dark:hover:bg-emerald-400/15"
+                >
+                  <span data-es="Descargar CV" data-en="Download CV">Descargar CV</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="rounded-[1.7rem] border border-slate-200 bg-gradient-to-br from-emerald-100/70 to-white/70 p-4 backdrop-blur-xl dark:border-white/10 dark:from-emerald-400/10 dark:to-white/5">
+              <img
+                src="assets/img/profile.jpg"
+                alt="Foto de perfil de Arnulfo Moreno"
+                class="h-[260px] w-full rounded-[1.3rem] object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel lateral innovador -->
+        <div class="grid gap-5">
+          <div class="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-emerald-600 to-green-800 p-6 text-white shadow-glow transition duration-300 hover:-translate-y-0.5">
+            <p
+              class="text-[11px] uppercase tracking-[0.32em] text-emerald-100/80"
+              data-es="Enfoque"
+              data-en="Focus"
+            >
+              Enfoque
+            </p>
+
+            <h3
+              class="mt-3 text-2xl font-bold leading-tight"
+              data-es="Automatización, análisis e inteligencia visual para decisiones."
+              data-en="Automation, analytics, and visual intelligence for decisions."
+            >
+              Automatización, análisis e inteligencia visual para decisiones.
+            </h3>
+
+            <p
+              class="mt-4 text-[0.96rem] leading-7 text-emerald-50/90"
+              data-es="Trabajo en soluciones donde los datos no solo se procesan, sino que se convierten en herramientas prácticas y medibles."
+              data-en="I work on solutions where data is not only processed, but transformed into practical and measurable tools."
+            >
+              Trabajo en soluciones donde los datos no solo se procesan, sino que se convierten en herramientas prácticas y medibles.
+            </p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
+            <div class="rounded-[1.6rem] border border-slate-200 bg-white/65 p-5 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5">
+              <div class="text-[11px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300">01</div>
+              <h4 class="mt-2 text-lg font-bold">Python</h4>
+              <p
+                class="mt-2 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
+                data-es="Automatización, procesamiento y generación de reportes."
+                data-en="Automation, processing, and report generation."
+              >
+                Automatización, procesamiento y generación de reportes.
+              </p>
+            </div>
+
+            <div class="rounded-[1.6rem] border border-slate-200 bg-white/65 p-5 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5">
+              <div class="text-[11px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300">02</div>
+              <h4 class="mt-2 text-lg font-bold">SQL & BI</h4>
+              <p
+                class="mt-2 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
+                data-es="Integración, análisis y visualización de información."
+                data-en="Integration, analysis, and information visualization."
+              >
+                Integración, análisis y visualización de información.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Perfil + métricas -->
+      <section id="perfil" class="mt-5 grid gap-5 xl:grid-cols-[0.95fr_1.05fr]">
+        <div class="rounded-[1.9rem] border border-slate-200 bg-white/65 p-6 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+          <p
+            class="text-[11px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300"
+            data-es="Perfil"
+            data-en="Profile"
+          >
+            Perfil
+          </p>
+
+          <h3
+            class="mt-3 text-3xl font-bold"
+            data-es="Un perfil técnico orientado a impacto real."
+            data-en="A technical profile focused on real impact."
+          >
+            Un perfil técnico orientado a impacto real.
+          </h3>
+
+          <p
+            class="mt-5 text-[1rem] leading-8 text-slate-600 dark:text-slate-300"
+            data-es="Experiencia en automatización de reportes, análisis estadístico, consultas SQL, procesamiento de datos y visualización de indicadores. Mi enfoque es transformar procesos manuales en flujos más eficientes, claros y sostenibles."
+            data-en="Experience in report automation, statistical analysis, SQL querying, data processing, and indicator visualization. My focus is transforming manual processes into more efficient, clear, and sustainable workflows."
+          >
+            Experiencia en automatización de reportes, análisis estadístico, consultas SQL, procesamiento de datos y visualización de indicadores. Mi enfoque es transformar procesos manuales en flujos más eficientes, claros y sostenibles.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="rounded-[1.6rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 shadow-soft transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
+            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-300">SQL</div>
+            <p
+              class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400"
+              data-es="Consultas, joins, vistas y análisis estructurado."
+              data-en="Queries, joins, views, and structured analysis."
+            >
+              Consultas, joins, vistas y análisis estructurado.
+            </p>
+          </div>
+
+          <div class="rounded-[1.6rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 shadow-soft transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
+            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-300">BI</div>
+            <p
+              class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400"
+              data-es="Dashboards, KPIs y reportes ejecutivos."
+              data-en="Dashboards, KPIs, and executive reporting."
+            >
+              Dashboards, KPIs y reportes ejecutivos.
+            </p>
+          </div>
+
+          <div class="rounded-[1.6rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 shadow-soft transition duration-300 hover:-translate-y-0.5 dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
+            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-300">ML</div>
+            <p
+              class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400"
+              data-es="Modelos y análisis para extraer patrones."
+              data-en="Models and analysis to extract patterns."
+            >
+              Modelos y análisis para extraer patrones.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Habilidades rediseñadas -->
+      <section id="habilidades" class="mt-5">
+        <div class="rounded-[1.9rem] border border-slate-200 bg-white/65 p-6 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p
+                class="text-[11px] uppercase tracking-[0.30em] text-emerald-600 dark:text-emerald-300"
+                data-es="Habilidades"
+                data-en="Skills"
+              >
+                Habilidades
+              </p>
+              <h3
+                class="mt-2 text-3xl font-bold"
+                data-es="Capacidades técnicas organizadas por áreas."
+                data-en="Technical capabilities organized by areas."
+              >
+                Capacidades técnicas organizadas por áreas.
+              </h3>
+            </div>
+
+            <p
+              class="max-w-xl text-sm leading-6 text-slate-500 dark:text-slate-400"
+              data-es="Una combinación de automatización, analítica, visualización y pensamiento cuantitativo."
+              data-en="A combination of automation, analytics, visualization, and quantitative thinking."
+            >
+              Una combinación de automatización, analítica, visualización y pensamiento cuantitativo.
+            </p>
+          </div>
+
+          <div class="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <div class="rounded-[1.4rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-glass dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
+              <h4 class="text-lg font-bold">Python</h4>
+              <p
+                class="mt-3 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
+                data-es="Automatización de tareas, generación de archivos, procesamiento y análisis."
+                data-en="Task automation, file generation, processing, and analysis."
+              >
+                Automatización de tareas, generación de archivos, procesamiento y análisis.
+              </p>
+            </div>
+
+            <div class="rounded-[1.4rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-glass dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
+              <h4 class="text-lg font-bold">SQL</h4>
+              <p
+                class="mt-3 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
+                data-es="Consultas avanzadas, agregaciones, joins y estructuración de datos."
+                data-en="Advanced queries, aggregations, joins, and data structuring."
+              >
+                Consultas avanzadas, agregaciones, joins y estructuración de datos.
+              </p>
+            </div>
+
+            <div class="rounded-[1.4rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-glass dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
+              <h4 class="text-lg font-bold">Power BI</h4>
+              <p
+                class="mt-3 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
+                data-es="Dashboards estratégicos, indicadores y comunicación visual de resultados."
+                data-en="Strategic dashboards, indicators, and visual communication of results."
+              >
+                Dashboards estratégicos, indicadores y comunicación visual de resultados.
+              </p>
+            </div>
+
+            <div class="rounded-[1.4rem] border border-slate-200 bg-gradient-to-br from-white to-emerald-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-glass dark:border-white/10 dark:from-white/5 dark:to-emerald-400/5">
+              <h4 class="text-lg font-bold">Estadística</h4>
+              <p
+                class="mt-3 text-[0.95rem] leading-6 text-slate-600 dark:text-slate-400"
+                data-es="Análisis descriptivo, inferencia y apoyo cuantitativo a decisiones."
+                data-en="Descriptive analysis, inference, and quantitative support for decisions."
+              >
+                Análisis descriptivo, inferencia y apoyo cuantitativo a decisiones.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto" class="mt-5">
+        <div class="rounded-[1.9rem] border border-slate-200 bg-gradient-to-r from-emerald-50 to-green-100 p-6 shadow-soft dark:border-white/10 dark:from-[#07251e] dark:to-[#0b3126]">
+          <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p
+                class="text-[11px] uppercase tracking-[0.30em] text-emerald-700 dark:text-emerald-300"
+                data-es="Contacto"
+                data-en="Contact"
+              >
+                Contacto
+              </p>
+
+              <h3
+                class="mt-2 text-3xl font-bold"
+                data-es="Conversemos sobre datos, automatización y proyectos."
+                data-en="Let’s talk about data, automation, and projects."
+              >
+                Conversemos sobre datos, automatización y proyectos.
+              </h3>
+
+              <p
+                class="mt-4 max-w-3xl text-[0.98rem] leading-7 text-slate-600 dark:text-slate-300"
+                data-es="Puedes ver mis proyectos, mi perfil profesional o comunicarte conmigo por estos medios."
+                data-en="You can explore my projects, my professional profile, or contact me through these channels."
+              >
+                Puedes ver mis proyectos, mi perfil profesional o comunicarte conmigo por estos medios.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://github.com/tuusuario"
+                target="_blank"
+                class="rounded-[1rem] border border-emerald-200 bg-white/80 px-4 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+              >
+                GitHub
+              </a>
+
+              <a
+                href="https://linkedin.com/in/tuusuario"
+                target="_blank"
+                class="rounded-[1rem] border border-emerald-200 bg-white/80 px-4 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+              >
+                LinkedIn
+              </a>
+
+              <a
+                href="mailto:tucorreo@correo.com"
+                class="rounded-[1rem] border border-emerald-200 bg-white/80 px-4 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+              >
+                Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
-</section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="max-w-4xl mx-auto px-6 py-20 text-center">
-  <h2 class="text-3xl font-bold mb-6">Contacto</h2>
+  <script>
+    const html = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const themeKnob = document.getElementById("themeKnob");
+    const languageToggle = document.getElementById("languageToggle");
+    const languageKnob = document.getElementById("languageKnob");
 
-  <div class="flex justify-center gap-6">
-    <a href="https://github.com/tuusuario" class="hover:text-cyan-400">GitHub</a>
-    <a href="https://linkedin.com/in/tuusuario" class="hover:text-cyan-400">LinkedIn</a>
-    <a href="mailto:tucorreo@correo.com" class="hover:text-cyan-400">Correo</a>
-  </div>
-</section>
+    function applyTheme(theme) {
+      if (theme === "dark") {
+        html.classList.add("dark");
+        themeKnob.style.transform = "translateX(32px)";
+      } else {
+        html.classList.remove("dark");
+        themeKnob.style.transform = "translateX(0)";
+      }
+      localStorage.setItem("theme", theme);
+    }
 
-<!-- FOOTER -->
-<footer class="text-center text-slate-500 py-8 border-t border-white/10">
-  © 2026 Portafolio profesional
-</footer>
+    function applyLanguage(lang) {
+      document.documentElement.lang = lang;
 
+      document.querySelectorAll("[data-es]").forEach((el) => {
+        el.textContent = lang === "en" ? el.dataset.en : el.dataset.es;
+      });
+
+      if (lang === "en") {
+        languageKnob.style.transform = "translateX(32px)";
+      } else {
+        languageKnob.style.transform = "translateX(0)";
+      }
+
+      localStorage.setItem("language", lang);
+    }
+
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    const savedLanguage = localStorage.getItem("language") || "es";
+
+    applyTheme(savedTheme);
+    applyLanguage(savedLanguage);
+
+    themeToggle.addEventListener("click", () => {
+      const newTheme = html.classList.contains("dark") ? "light" : "dark";
+      applyTheme(newTheme);
+    });
+
+    languageToggle.addEventListener("click", () => {
+      const currentLang = document.documentElement.lang || "es";
+      const newLang = currentLang === "es" ? "en" : "es";
+      applyLanguage(newLang);
+    });
+  </script>
 </body>
 </html>
