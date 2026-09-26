@@ -33,10 +33,9 @@ export function Home() {
 
   return <>
     <section className="hero">
-      <div className="hero-top"><span className="avatar" aria-hidden="true">{personal.initials}</span><span className="eyebrow">HOLA, SOY {personal.name}</span></div>
+      <div className="hero-top"><span className="avatar" aria-hidden="true">{personal.initials}</span><div className="hero-identity"><span className="eyebrow">HOLA, SOY</span><span className="hero-identity-name">{personal.name}</span></div></div>
       <p className="hero-greeting">Especializado en construir la parte que hace funcionar cada producto.</p>
       <h1 className="hero-role">{personal.role}<span className="code-cursor" aria-hidden="true">_</span></h1>
-      <p className="hero-name">{personal.name}</p>
       <p className="hero-description">{personal.introduction}</p>
       <div className="hero-actions">
         <Link className="button button-primary" to="/proyectos">Explorar proyectos<Arrow /></Link>
@@ -47,10 +46,10 @@ export function Home() {
       <div className="hero-note"><span className="tiny-dot" />BACKEND · SOFTWARE · DESARROLLO WEB</div>
       <span className="hero-code" aria-hidden="true">{'{ }'}</span>
     </section>
-    <section className="section"><SectionHeading number="01" title="Proyectos destacados" to="/proyectos" link="Ver todos los proyectos" /><p className="section-intro">Del problema a la solución. Un espacio para mostrar lo que construyo.</p><div className="project-grid">{projects.filter(project => project.featured).slice(0, 3).map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div></section>
-    <section className="section about-summary"><SectionHeading number="02" title="Un poco sobre mí" /><div><p>{personal.summary}</p><Link className="text-link" to="/sobre-mi">Conocer más sobre mí<Arrow /></Link></div></section>
-    <section className="section"><SectionHeading number="03" title="Mi caja de herramientas" /><p className="section-intro">Tecnologías y herramientas que dan forma al desarrollo.<span className="content-note"> Selección pendiente de completar.</span></p><Technologies /></section>
-    <section className="section"><SectionHeading number="04" title="Experiencia" to="/experiencia" link="Ver experiencia completa" /><ExperienceList compact /></section>
+    <section className="section"><SectionHeading title="Proyectos destacados" to="/proyectos" link="Ver todos los proyectos" /><p className="section-intro">Del problema a la solución. Un espacio para mostrar lo que construyo.</p><div className="project-grid">{projects.filter(project => project.featured).slice(0, 3).map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div></section>
+    <section className="section"><SectionHeading title="Experiencia" to="/experiencia" link="Ver experiencia completa" /><ExperienceList compact /></section>
+    <section className="section about-summary"><SectionHeading title="Un poco sobre mí" /><div><p>{personal.summary}</p><Link className="text-link" to="/sobre-mi">Conocer más sobre mí<Arrow /></Link></div></section>
+    <section className="section"><SectionHeading title="Skills" /><p className="section-intro">Tecnologías y herramientas que utilizo para construir soluciones.</p><Technologies /></section>
     <ContactCTA />
   </>
 }
