@@ -1,3 +1,7 @@
-export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
-  return <span aria-hidden="true" className="arrow">{diagonal ? '↗' : '↗'.replace('↗', '→')}</span>
+interface ArrowProps {
+  diagonal?: boolean
+}
+
+export function Arrow({ diagonal = false }: ArrowProps) {
+  return <span aria-hidden="true" className="arrow">{diagonal ? '↗' : '→'}</span>
 }
