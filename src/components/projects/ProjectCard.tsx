@@ -1,5 +1,26 @@
-import type { Project, ProjectLink } from '../../types/portfolio'
-import { Arrow } from '../ui/Arrow'
+import type { CSSProperties } from 'react'
+import type { Project } from '../../types/portfolio'
+import { GitHubIcon } from '../ui/ActionIcons'
+
+interface ProjectTechnologyVisual {
+  color: string
+  iconUrl: string
+  fallback: string
+}
+
+const projectTechnologyVisuals: Record<string, ProjectTechnologyVisual> = {
+  Laravel: { color: '#ff2d20', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg', fallback: 'L' },
+  PHP: { color: '#777bb4', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg', fallback: 'php' },
+  MySQL: { color: '#4479a1', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg', fallback: '◫' },
+  React: { color: '#61dafb', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg', fallback: '⚛' },
+  'REST API': { color: '#ff6c37', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg', fallback: 'API' },
+}
+
+const defaultTechnologyVisual: ProjectTechnologyVisual = {
+  color: '#c7ff42',
+  iconUrl: '',
+  fallback: '•',
+}
 
 function getProjectArchitectureLabel(category: string) {
   if (category === 'API REST') return '{ API }'
@@ -45,11 +66,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index, expanded = false }: ProjectCardProps) {
-  const projectLinks: ProjectLink[] = [
-    { url: project.repository, label: 'Código' },
-    { url: project.demo, label: 'Demo' },
-    { url: project.documentation, label: 'Documentación' },
-  ].filter((link): link is ProjectLink & { url: string } => Boolean(link.url))
+  const repositoryUrl = project.repository ?? 'https://github.com/ArnulfoMo?tab=repositories'
 
   return (
     <article className="project-card">
@@ -62,20 +79,37 @@ export function ProjectCard({ project, index, expanded = false }: ProjectCardPro
         <h3>{project.name}</h3>
         <p>{project.description}</p>
         <ul className="tags" aria-label="Tecnologías">
-          {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
+          {project.technologies.map((technology) => {
+            const visual = projectTechnologyVisuals[technology] ?? defaultTechnologyVisual
+            const technologyStyle = { '--technology-color': visual.color } as CSSProperties
+
+            return (
+              <li className="project-technology" key={technology} style={technologyStyle}>
+                <span className="project-technology-icon" aria-hidden="true">
+                  {visual.iconUrl && <img src={visual.iconUrl} alt="" onError={(event) => { event.currentTarget.hidden = true }} />}
+                  <span>{visual.fallback}</span>
+                </span>
+                {technology}
+              </li>
+            )
+          })}
         </ul>
         {expanded && (
           <ul className="feature-list">
-            {project.features.map((feature) => <li key={feature}>{feature}</li>)}
+            {project.features.slice(0, 2).map((feature) => <li key={feature}>{feature}</li>)}
           </ul>
         )}
         <div className="project-links">
-          {projectLinks.length ? projectLinks.map((link) => (
-            <a key={link.label} href={link.url} target="_blank" rel="noreferrer">
-              {link.label}
-              <Arrow diagonal />
-            </a>
-          )) : <span className="muted text-sm">[Agregar enlaces al proyecto]</span>}
+          <a
+            className="project-github-link"
+            href={repositoryUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Ver ${project.name} en GitHub`}
+            title="Ver repositorio en GitHub"
+          >
+            <GitHubIcon />
+          </a>
         </div>
       </div>
     </article>

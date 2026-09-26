@@ -11,6 +11,40 @@ body {
 .site-header { border-bottom-color: #ffffff12; background: #090a1ce6; }
 .navigation a { color: #aeb0c8; }
 .navigation a:hover, .navigation a.active, .accent, .wordmark span { color: #c7ff42; }
+.navigation a {
+  position: relative;
+  padding: .35rem 0;
+  transition: color .25s ease;
+}
+
+.navigation a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  content: '';
+  background: #c7ff42;
+  box-shadow: 0 0 10px #c7ff42b3;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .28s ease;
+}
+
+.navigation a:hover::after,
+.navigation a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.wordmark {
+  transition: color .25s ease, text-shadow .25s ease;
+}
+
+.wordmark:hover {
+  color: #fff;
+  text-shadow: 0 0 16px #c7ff424d;
+}
 
 .hero { min-height: 650px; padding: 8.5rem 0 6rem; overflow: visible; }
 .hero::after {
@@ -65,6 +99,12 @@ body {
   color: #d0d1df;
   font-size: clamp(1rem, 1.8vw, 1.16rem);
 }
+
+.hero-specialties {
+  color: #d9ff75;
+  font-weight: 750;
+  text-shadow: 0 0 10px #c7ff4266, 0 0 24px #c7ff4226;
+}
 .button-primary { color: #161b08; background: #c7ff42; box-shadow: 0 0 23px #c7ff4230; }
 .button-secondary { border-color: #ffffff35; background: #ffffff08; }
 .action-button { border: 1px solid #ffffff35; color: #e4e5ef; cursor: pointer; font: inherit; }
@@ -102,8 +142,78 @@ body {
 .image-slot span { font-size: 1.8rem; font-weight: 300; line-height: 1; }
 .image-slot small { font-size: .65rem; font-weight: 700; letter-spacing: .12em; }
 .project-card { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.project-copy > p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.projects-full {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-github-link {
+  display: inline-grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  margin-right: 0 !important;
+  color: #e8eaf2 !important;
+  border: 1px solid #ffffff2b;
+  border-radius: 50%;
+  background: #ffffff08;
+  transition: color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.project-github-link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
 .connection-line { background: #c7ff42; }
 .tags li { border-color: #ffffff24; }
+.project-technology {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  color: #eef0f7 !important;
+  border-color: color-mix(in srgb, var(--technology-color) 65%, transparent) !important;
+  background: color-mix(in srgb, var(--technology-color) 12%, transparent);
+}
+
+.project-technology-icon {
+  display: inline-grid;
+  width: 1.15rem;
+  height: 1.15rem;
+  place-items: center;
+  border-radius: .22rem;
+  background: #f6f7fb;
+  overflow: hidden;
+  color: #10111f;
+  font-size: .48rem;
+  font-weight: 800;
+}
+
+.project-technology-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: .08rem;
+  object-fit: contain;
+}
+
+.project-technology-icon span {
+  display: none;
+}
+
+.project-technology-icon img[hidden] + span,
+.project-technology-icon > span:only-child {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  background: var(--technology-color);
+}
 .skip-link { background: #c7ff42; }
 
 @keyframes blink { 50% { opacity: 0; } }
@@ -116,6 +226,7 @@ body {
   .education:nth-child(2):hover { border-left-color: #b5adff; box-shadow: 0 15px 32px #00000045, 0 0 22px #8f83ff1c; }
   .project-card:hover .project-image { transform: scale(1.06); filter: saturate(1.15) brightness(1.08); }
   .project-card:hover .image-slot { opacity: 1; background: #080916b8; }
+  .project-github-link:hover { transform: translateY(-2px); color: #c7ff42 !important; border-color: #c7ff42; box-shadow: 0 0 18px #c7ff4238; }
 }
 
 @media (max-width: 900px) {
@@ -147,4 +258,34 @@ body {
   .hero-top .eyebrow { line-height: 1.45; }
   .hero-actions > * { width: 100%; justify-content: center; }
   .section-heading { align-items: flex-start; flex-wrap: wrap; }
+}
+
+@media (max-width: 720px) {
+  .navigation.is-open {
+    animation: navigation-reveal .22s ease-out;
+  }
+}
+
+@keyframes navigation-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation a,
+  .navigation a::after,
+  .wordmark {
+    transition: none;
+  }
+
+  .navigation.is-open {
+    animation: none;
+  }
 }

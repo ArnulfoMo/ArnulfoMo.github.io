@@ -26,7 +26,9 @@ export function Home() {
         <h1 className="hero-role">
           {personal.role}<span className="code-cursor" aria-hidden="true">_</span>
         </h1>
-        <p className="hero-description">{personal.introduction}</p>
+        <p className="hero-description">
+          Desarrollo de software con enfoque en <span className="hero-specialties">backend, APIs y bases de datos.</span>
+        </p>
         <HeroActions cvUrl={personal.cvUrl} email={personal.email} githubUrl={githubUrl} />
         <div className="hero-note"><span className="tiny-dot" />BACKEND · SOFTWARE · DESARROLLO WEB</div>
         <span className="hero-code" aria-hidden="true">{'{ }'}</span>

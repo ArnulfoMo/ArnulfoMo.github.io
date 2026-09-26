@@ -18,7 +18,6 @@ export function Projects() {
         <p className="eyebrow">IDEAS QUE TOMAN FORMA</p>
         <h1>Proyectos<span className="accent">.</span></h1>
         <p>Software, sistemas y soluciones. Una mirada al problema, al proceso y al código.</p>
-        <p className="content-note">Los proyectos actuales son placeholders para sustituir por trabajos reales.</p>
       </div>
       <div className="filters" aria-label="Filtrar proyectos por categoría">
         {categories.map((category) => (
