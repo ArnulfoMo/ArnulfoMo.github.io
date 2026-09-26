@@ -1,6 +1,6 @@
-# Portafolio de Arnulfo Moreno Melara
+# Portafolio
 
-Portafolio profesional de **Arnulfo Moreno Melara**, Backend Developer. Reúne proyectos, experiencia, tecnologías y formas de contacto en una interfaz oscura con acentos neón.
+Portafolio, Backend Developer. Reúne proyectos, experiencia, tecnologías y formas de contacto en una interfaz oscura con acentos neón.
 
 🌐 **Sitio:** [arnulfomo.github.io](https://arnulfomo.github.io/)  
 💻 **GitHub:** [@ArnulfoMo](https://github.com/ArnulfoMo)  
